@@ -42,7 +42,7 @@ class MainViewModel : ViewModel() {
                 if (response.isSuccessful && responseBody != null) {
                     searchList.value = ArrayList(responseBody.items)
                     loadingState.value = false
-                }else{
+                } else {
                     loadingState.value = false
                 }
             }
@@ -119,6 +119,25 @@ class MainViewModel : ViewModel() {
     }
 
     fun detailUser(username: String) {
+        loadingState.value = true
+        val client = ApiConfig.getApiService().getUserDetail(username)
+        client.enqueue(object : Callback<UserDetailResponse> {
+            override fun onResponse(
+                call: Call<UserDetailResponse>,
+                response: Response<UserDetailResponse>
+            ) {
+                if (response.isSuccessful) {
+                    userDetail.value = response.body()
+                }
+                loadingState.value = false
+            }
 
+            override fun onFailure(call: Call<UserDetailResponse>, t: Throwable) {
+                loadingState.value = false
+                Log.e("MainViewModel", "onFailure: ${t.message}")
+            }
+
+        })
     }
+
 }

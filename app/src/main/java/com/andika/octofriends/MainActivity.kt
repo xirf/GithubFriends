@@ -4,13 +4,12 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andika.octofriends.adapter.UserAdapter
 import com.andika.octofriends.databinding.ActivityMainBinding
@@ -24,6 +23,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -38,9 +39,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showLoading(state: Boolean) {
         if (state) {
-            binding.progressBar.visibility = View.VISIBLE
+            binding.clProgressBar.visibility = View.VISIBLE
         } else {
-            binding.progressBar.visibility = View.GONE
+            binding.clProgressBar.visibility = View.GONE
         }
     }
 
@@ -93,6 +94,11 @@ class MainActivity : AppCompatActivity() {
         close.icon?.setVisible(false, false)
 
         return true
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.searchUser("xirf")
     }
 
 }

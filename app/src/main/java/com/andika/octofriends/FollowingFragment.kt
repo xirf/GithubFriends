@@ -74,4 +74,9 @@ class FollowingFragment : Fragment() {
             binding.progressBar.visibility = View.GONE
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getUserFollowings(UserActivity.username)
+    }
 }

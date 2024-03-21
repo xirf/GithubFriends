@@ -1,6 +1,7 @@
 package com.andika.octofriends.network
 
-import okhttp3.HttpUrl
+import android.util.Log
+import com.andika.octofriends.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -11,8 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiConfig {
 
-    private const val BASE_URL = "https://api.github.com/"
-    private const val token = "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"
+    private const val BASE_URL = BuildConfig.BASE_URL
+    private const val token = BuildConfig.API_KEY
 
     class TokenInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
@@ -25,7 +26,13 @@ object ApiConfig {
     }
 
     fun getApiService(): ApiService {
-        val loggingInterceptor= HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+        val loggingInterceptor = if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        } else {
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+        }
+
+        Log.d("ApiConfig", token)
 
         val tokenInterceptor = TokenInterceptor()
 
