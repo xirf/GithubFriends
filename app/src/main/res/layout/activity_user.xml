@@ -118,10 +118,10 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:contentDescription="@string/desc_user_avatar"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginEnd="4dp"
+                            android:contentDescription="@string/desc_user_avatar"
                             android:src="@drawable/ic_user_black_24dp" />
 
                         <TextView
@@ -189,5 +189,14 @@
         android:layout_gravity="center"
         android:visibility="gone"
         tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:contentDescription="Add to Favorite"
+        android:src="@drawable/ic_heart_black_24dp" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -16,5 +16,7 @@
     <string name="no_following">This user doesn\'t follow anyone</string>
     <string name="no_following_org">Organization can\'t follow anyone</string>
     <string name="no_followers_org">Organization doesn\'t have any follower</string>
+    <string name="setting">Setting</string>
+    <string name="favorite">Favorite</string>
 
 </resources>
