@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiConfig {
 
     private const val BASE_URL = BuildConfig.BASE_URL
-    private const val TOKEN = BuildConfig.API_KEY
+    private const val TOKEN: String = BuildConfig.API_KEY
 
     class TokenInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {

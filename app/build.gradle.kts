@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -16,14 +18,12 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
-        buildConfigField("String", "API_KEY", findProperty("API_KEY").toString())
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {
@@ -32,6 +32,16 @@ android {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
+        }
+
+        defaultConfig{
+            val p = Properties()
+            p.load(project.rootProject.file("local.properties").reader())
+            val yourKey: String = p.getProperty("API_KEY")
+
+
+            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
+            buildConfigField("String", "API_KEY", yourKey)
         }
     }
 

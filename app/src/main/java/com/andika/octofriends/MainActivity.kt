@@ -3,6 +3,7 @@ package com.andika.octofriends
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andika.octofriends.adapter.UserAdapter
 import com.andika.octofriends.databinding.ActivityMainBinding
@@ -59,7 +61,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showRecycleView() {
-        binding.rvUser.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            binding.rvUser.layoutManager = GridLayoutManager(this, 2)
+        } else {
+            binding.rvUser.layoutManager = LinearLayoutManager(this)
+        }
         binding.rvUser.visibility = View.VISIBLE
         binding.rvUser.adapter = adapter
         adapter.setOnItemClickCallback{user: Items ->

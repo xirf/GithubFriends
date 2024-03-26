@@ -1,12 +1,14 @@
 package com.andika.octofriends
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andika.octofriends.adapter.FollowAdapter
 import com.andika.octofriends.databinding.FragmentFollowerBinding
@@ -53,7 +55,11 @@ class FollowerFragment : Fragment() {
     }
 
     private fun showRecycleView() {
-        binding.rvFollowers.layoutManager = LinearLayoutManager(activity)
+        if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            binding.rvFollowers.layoutManager = GridLayoutManager(activity, 2)
+        } else {
+            binding.rvFollowers.layoutManager = LinearLayoutManager(activity)
+        }
         binding.rvFollowers.setHasFixedSize(true)
         binding.rvFollowers.adapter = adapter
         adapter.setOnItemClickCallback { items -> selectedUser(items) }
