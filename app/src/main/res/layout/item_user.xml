@@ -2,81 +2,80 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvListUser"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="8dp"
-    android:layout_marginVertical="4dp"
-    app:cardCornerRadius="24dp"
-    app:cardElevation="8dp"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="@dimen/card_margin"
+    android:backgroundTint="@color/colorBaseVariant"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp">
 
-    >
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp">
+        android:padding="@dimen/card_padding">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="1000dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/iv_avatar"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:contentDescription="@string/desc_user_avatar"
-                tools:src="@tools:sample/avatars" />
-        </androidx.cardview.widget.CardView>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            app:civ_border_color="@color/colorNeutral"
+            app:civ_border_width="2dp"
+            tools:src="@tools:sample/avatars" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cv_avatar"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:text="@tools:sample/full_names" />
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/iv_avatar"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="8dp"
-                tools:text="@tools:sample/first_names" />
-
-            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/gray"
-                android:orientation="horizontal"
-                app:cardCornerRadius="1000dp">
+                android:layout_marginStart="24dp"
+                android:text="@string/app_name"
+                android:textColor="@color/colorOnBase"
+                android:textSize="@dimen/text_xlarge"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:alpha="0.75"
+                android:textColor="@color/colorNeutral"
+                android:textSize="@dimen/text_small"
+                tools:text="https://github.com/xirf" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/chip_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="@color/colorSuccess"
+                app:cardCornerRadius="8dp">
 
                 <TextView
-                    android:id="@+id/tv_type"
+                    android:id="@+id/chip_category_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="8dp"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    tools:text="user" />
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="1dp"
+                    android:textColor="@color/colorOnPrimary"
+                    android:textSize="@dimen/text_small"
+
+                    tools:text="User" />
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

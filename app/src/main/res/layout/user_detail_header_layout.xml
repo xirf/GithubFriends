@@ -1,0 +1,196 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBase"
+    android:padding="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:civ_border_color="@color/colorPrimaryVariant"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/civ_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/civ_avatar"
+        app:layout_constraintTop_toTopOf="@id/civ_avatar">
+
+        <TextView
+            android:id="@+id/tv_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorOnBase"
+            android:textSize="@dimen/text_xlarge"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/label_followers"
+            app:layout_constraintLeft_toLeftOf="@id/label_followers"
+            app:layout_constraintRight_toRightOf="@id/label_followers"
+            tools:text="23000" />
+
+        <TextView
+            android:id="@+id/label_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/label_followers"
+            android:textColor="@color/colorOnBase"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_repos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorOnBase"
+            android:textSize="@dimen/text_xlarge"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/label_repos"
+            app:layout_constraintLeft_toLeftOf="@id/label_repos"
+            app:layout_constraintRight_toRightOf="@id/label_repos"
+            tools:text="23000" />
+
+        <TextView
+            android:id="@+id/label_repos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="@string/label_repos"
+            android:textColor="@color/colorOnBase"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorOnBase"
+            android:textSize="@dimen/text_xlarge"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/label_following"
+            app:layout_constraintLeft_toLeftOf="@id/label_following"
+            app:layout_constraintRight_toRightOf="@id/label_following"
+            tools:text="230" />
+
+        <TextView
+            android:id="@+id/label_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_following"
+            android:textColor="@color/colorOnBase"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/label_followers"
+            app:layout_constraintRight_toRightOf="@id/label_repos" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorOnBase"
+        android:textSize="@dimen/text_large"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/civ_avatar"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:alpha="0.7"
+        android:textColor="@color/colorOnBase"
+        android:textSize="@dimen/text_medium"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="@tools:sample/first_names" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorOnBase"
+        android:textSize="@dimen/text_medium"
+        app:layout_constraintTop_toBottomOf="@id/tv_username"
+        tools:text="@tools:sample/first_names" />
+
+    <LinearLayout
+        android:id="@+id/ll_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc">
+
+        <TextView
+            android:id="@+id/tv_work"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="12dp"
+            android:textColor="@color/colorOnBase"
+            app:drawableStartCompat="@drawable/ic_briefcase"
+            app:drawableTint="@color/colorOnBase"
+            tools:text="Company" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawablePadding="12dp"
+            android:textColor="@color/colorOnBase"
+            app:drawableStartCompat="@drawable/ic_location"
+            app:drawableTint="@color/colorOnBase"
+            tools:text="Company" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_info">
+
+        <Button
+            android:id="@+id/btn_add_favorite"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorNeutralVariant"
+            android:text="@string/text_favorite"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.Active"
+            android:textColor="@color/colorOnBase" />
+
+        <Button
+            android:id="@+id/btn_share"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorNeutralVariant"
+            android:text="@string/text_share"
+            android:textAllCaps="false"
+            android:textColor="@color/colorOnBase"
+            app:rippleColor="@color/colorNeutralVariant" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

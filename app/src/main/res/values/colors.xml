@@ -2,5 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gray">#35000000</color>
+    <color name="colorPrimary">#4a00ff</color>
+    <color name="colorPrimaryVariant">#d1dbff</color>
+    <color name="colorOnPrimary">#d1dbff</color>
+    <color name="colorSecondary">#ff00d3</color>
+    <color name="colorAccent">#00d7c0</color>
+    <color name="colorNeutral">#2b3440</color>
+    <color name="colorNeutralVariant">#d7dde4</color>
+    <color name="colorBase">#ffffff</color>
+    <color name="colorOnBase">#000000</color>
+    <color name="colorOnBaseVariant">#E5E7ED</color>
+    <color name="colorBaseVariant">#f2f2f2</color>
+    <color name="colorInfo">#00b5ff</color>
+    <color name="colorError">#ff5861</color>
+    <color name="colorSuccess">#00a96e</color>
+    <color name="colorWarning">#efd7bb</color>
+    <color name="colorOnBaseTransparent">#BF000000</color>
 </resources>

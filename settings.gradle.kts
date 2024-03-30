@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Octo Friends"
+rootProject.name = "Github Friend"
 include(":app")
  

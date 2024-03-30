@@ -1,22 +1,23 @@
 <resources>
-    <string name="app_name">Octo Friends</string>
-    <string name="search_hint">Search for account…</string>
-    <string name="desc_user_avatar">User Avatar</string>
-    <string name="help_text_followers">Followers:</string>
-    <string name="help_text_following">Following</string>
-    <string name="not_found">Sorry, we couldn\'t find any user</string>
-    <string name="search">Search friend…</string>
-    <string name="help_text_avatar">avatar of github user</string>
-    <string name="text_followers">"follower"</string>
+    <string name="app_name">Github Friend</string>
+    <string name="text_profile">Profile</string>
+    <string name="text_favorite">Favorite</string>
+    <string name="text_search">Search</string>
+    <string name="text_home">Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="not_found">Mysteriously missing. Just like my patience or it just never existed.</string>
+    <string name="not_found_header">Existed here… once</string>
+    <string name="text_loading">Loading...</string>
+    <string name="hint_search">Search user or organization</string>
+    <string name="help_text_avatar">avatar of user</string>
+    <string name="text_followers">followers</string>
     <string name="text_following">following</string>
-    <string name="user">User Details</string>
-    <string name="organization">Organization Details</string>
-    <string name="no_name">Name Not Available</string>
-    <string name="no_follower">This user doesn\'t have any follower</string>
-    <string name="no_following">This user doesn\'t follow anyone</string>
-    <string name="no_following_org">Organization can\'t follow anyone</string>
-    <string name="no_followers_org">Organization doesn\'t have any follower</string>
-    <string name="setting">Setting</string>
-    <string name="favorite">Favorite</string>
-
+    <string name="desc_user_avatar">avatar icon</string>
+    <string name="label_following">Following</string>
+    <string name="label_repos">Repos</string>
+    <string name="label_followers">Followers</string>
+    <string name="text_share">Share</string>
+    <string name="text_back">back</string>
+    <string name="text_use_dark_mode">Use Dark Mode</string>
 </resources>

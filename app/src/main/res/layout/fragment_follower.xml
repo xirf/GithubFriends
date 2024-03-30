@@ -3,32 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".FollowerFragment">
+    android:layout_margin="8dp"
+    android:background="@color/colorBase"
+    tools:context=".ui.userdetail.FollowerFragment">
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_followers"
+        android:id="@+id/rvUser"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_user" />
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:indeterminateTint="@color/black"
-        android:visibility="gone"
-        tools:visibility="visible" />
+    <include
+        android:id="@+id/empty_layout"
+        layout="@layout/layout_empty" />
 
-    <TextView
-        android:id="@+id/tv_not_found"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/not_found"
-        android:textAlignment="center"
-        android:visibility="gone"
-        tools:visibility="visible" />
-
+    <include
+        android:id="@+id/loading_layout"
+        layout="@layout/layout_loading" />
 </FrameLayout>
